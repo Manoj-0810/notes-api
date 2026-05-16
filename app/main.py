@@ -97,14 +97,15 @@ def create_app() -> FastAPI:
     # Register routers (no prefix - paths are in the routers)
     app.include_router(auth.router)
     app.include_router(notes.router)
-    
+
     @app.get("/")
     async def root():
-    return {
-        "project": "Notes API Backend",
-        "status": "running",
-        "documentation": "/docs"
-    }
+        return {
+            "project": "Notes API Backend",
+            "status": "running",
+            "documentation": "/docs"
+        }
+
     return app
 
 
